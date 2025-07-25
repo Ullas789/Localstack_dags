@@ -1,0 +1,23 @@
+{
+    "database_connection_id": "postgres_default",
+    "bucket": "my-sql-bucket",
+    "queries": [
+      {
+        "s3_path": "create_table.sql",
+        "task_id": "run_create_table"
+      },
+      {
+        "s3_path": "insert_data.sql",
+        "task_id": "run_insert_data"
+      },
+      {
+        "s3_path": "result_table.sql",
+        "task_id": "run_result_table"
+      },
+      {
+        "s3_path": "avg_salary.sql",
+        "task_id": "run_avg_salary"
+      }
+    ]
+  }
+  

@@ -1,0 +1,15 @@
+{
+    "database_connection_id": "postgres_default",
+    "bucket": "my-sql-bucket",
+    "queries": [
+      {
+        "s3_path": "result_table.sql",
+        "task_id": "create_result_table"
+      },
+      {
+        "s3_path": "cpm_logic.sql",
+        "task_id": "run_query"
+      }
+    ]
+  }
+  
