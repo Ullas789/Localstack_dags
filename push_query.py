@@ -1,24 +1,20 @@
-import boto3
 import os
-
-s3 = boto3.client(
-    's3',
-    endpoint_url='http://localhost:4566',
-    aws_access_key_id='test',
-    aws_secret_access_key='test',
-    region_name='us-east-1'
-)
-
-bucket_name = 'my-sql-bucket'
-
+import boto3
+from utils.exceptions import *
+from utils.constants import *  # Import the queries list
+from utils.s3_utils import *
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+s3 = s3_config
+bucket_name = s3_bucket_name
 # Create bucket
 s3.create_bucket(Bucket=bucket_name)
 
 # Path to the SQL folder
-sql_folder = './sql_files'
+sql_folder = sql_folder
 
 # Upload SQL files
-for filename in  ['create_table.sql', 'insert_data.sql', 'avg_salary.sql','result_table.sql']:
+for filename in queries:
     file_path = os.path.join(sql_folder, filename)
     with open(file_path, 'rb') as f:
         s3.upload_fileobj(f, bucket_name, filename)

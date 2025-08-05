@@ -3,7 +3,7 @@
     "bucket": "my-sql-bucket",
     "queries": [
       {
-        "s3_path": "result_table.sql",
+        "s3_path": "result_table_enercare.sql",
         "task_id": "create_result_table"
       },
       {
