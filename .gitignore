@@ -3,3 +3,4 @@ logs/
 localstack/
 localstack/cache/
 .env
+docker-compose..yml
